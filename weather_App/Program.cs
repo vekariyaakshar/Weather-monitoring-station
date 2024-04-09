@@ -1,9 +1,17 @@
 ﻿namespace weathermonitoringsystem.App
 {
+    /// <summary>
+    /// Represents the entry point for the weather monitoring system application.
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// The main entry point for the weather monitoring system application.
+        /// </summary>
+        /// <param name="args">Command-line arguments provided to the application.</param>
         static void Main(string[] args)
         {
+            // Create a Weather_Station instance to manage weather-related functionalities
             Weather_Station weatherStation = new Weather_Station();
 
             // Create display objects
@@ -11,20 +19,13 @@
             IDisplay statisticsDisplay = weatherStation.CreateDisplay("Statistics");
             IDisplay forecastDisplay = weatherStation.CreateDisplay("Forecast");
 
-            // Update weather data multiple times to generate temperature history
-            for (int i = 0; i < 10; i++)
-            {
-                Weather_Data.Instance.UpdateWeatherData();
-            }
-
-            // Display weather data
+            // Display weather information
             currentConditionsDisplay.Display();
             statisticsDisplay.Display();
             forecastDisplay.Display();
         }
     }
 }
-
 
 
 
