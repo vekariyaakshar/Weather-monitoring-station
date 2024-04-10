@@ -1,4 +1,5 @@
-﻿namespace weathermonitoringsystem.App
+﻿
+namespace weathermonitoringsystem.App
 {
     /// <summary>
     /// Represents the entry point for the weather monitoring system application.
@@ -20,9 +21,22 @@
             IDisplay forecastDisplay = weatherStation.CreateDisplay("Forecast");
 
             // Display weather information
-            currentConditionsDisplay.Display();
+            object value = currentConditionsDisplay.Display();
             statisticsDisplay.Display();
             forecastDisplay.Display();
+        }
+
+        private interface IDisplay
+        {
+            object Display();
+        }
+
+        private class Weather_Station
+        {
+            internal IDisplay CreateDisplay(string v)
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }

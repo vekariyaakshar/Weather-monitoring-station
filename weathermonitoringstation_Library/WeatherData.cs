@@ -10,6 +10,7 @@ namespace weathermontitoringsystem_Library
     public class Weather_Data
     {
         private static Weather_Data? instance;
+        internal object WindSpeed;
         private Random random;
         private List<int> temperatureHistory;
 
@@ -37,6 +38,9 @@ namespace weathermontitoringsystem_Library
                 return instance;
             }
         }
+
+        public object Temperature { get; internal set; }
+        public object Humidity { get; internal set; }
 
         /// <summary>
         /// Method to generate and notify observers of random weather data updates.

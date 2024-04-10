@@ -5,21 +5,14 @@ namespace weathermontitoringsystem_Library
     /// such as minimum, maximum, and average temperatures, by implementing the IDisplay interface.
     /// This class subscribes to updates from Weather_Data to compute and display these statistics.
     /// </summary>
-    public class Statistics_Display : IDisplay
+    /// <remarks>
+    /// Initializes a new instance of the Statistics_Display class, subscribing to the weatherData's update events
+    /// to calculate and display weather statistics.
+    /// </remarks>
+    /// <param name="weatherData">The Weather_Data object this display will use to gather weather information.</param>
+    public class Statistics_Display(Weather_Data weatherData) : IDisplay
     {
-        private Weather_Data weatherData;
-
-        /// <summary>
-        /// Initializes a new instance of the Statistics_Display class, subscribing to the weatherData's update events
-        /// to calculate and display weather statistics.
-        /// </summary>
-        /// <param name="weatherData">The Weather_Data object this display will use to gather weather information.</param>
-        public Statistics_Display(Weather_Data weatherData)
-        {
-            this.weatherData = weatherData;
-            // Subscription to weatherData's events would typically be done here.
-            // For example: weatherData.UpdateEvent += OnWeatherDataUpdated;
-        }
+        private Weather_Data weatherData = weatherData;
 
         // Given that your provided code snippet is incomplete, I'll assume there's a method that gets called to display the statistics.
         /// <summary>
